@@ -3,7 +3,7 @@ import heroimg from "./../public/image/hero.png";
 import hightlightimg from "./../public/image/hightlightimg.png";
 import sneakershoe from "./../public/image/sneaker.png";
 
-import clip from "./../public/video/clip.mp4";
+// import clip from "./../public/video/clip.mp4";
 import vcover1 from "./../public/video/vcover1.png";
 import vcover2 from "./../public/video/vcover2.png";
 import vcover3 from "./../public/video/vcover3.png";
@@ -37,11 +37,11 @@ const heroapi = {
   subtitle: "Adapt 2.0 Sneakers",
   img: heroimg,
   btntext: "Explore Product",
-  videos: [
-    { imgsrc: vcover1, clip: clip },
-    { imgsrc: vcover2, clip: clip },
-    { imgsrc: vcover3, clip: clip },
-  ],
+//   videos: [
+//     { imgsrc: vcover1, clip: clip },
+//     { imgsrc: vcover2, clip: clip },
+//     { imgsrc: vcover3, clip: clip },
+//   ],
   sociallinks: [
     { icon: facebook },
     { icon: messenger },

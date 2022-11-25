@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import data from './../data'
+import { Hero } from './../components';
 
 const Home = () => {
   return (
@@ -8,7 +10,7 @@ const Home = () => {
         <meta name="description" content="Shop" />
       </Head>
       <main>
-        <h1 className='text-red-600'>welcome</h1>
+        <Hero />
       </main>
     </>
   )

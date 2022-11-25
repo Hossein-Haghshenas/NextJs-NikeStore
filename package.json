@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "nike-shop",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,5 +14,10 @@
     "next": "13.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.19",
+    "tailwindcss": "^3.2.4"
   }
 }

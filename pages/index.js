@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import data from './../data'
+import { heroapi } from './../data'
 import { Hero } from './../components';
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
         <meta name="description" content="Shop" />
       </Head>
       <main>
-        <Hero />
+        <Hero heroapi={heroapi} />
       </main>
     </>
   )

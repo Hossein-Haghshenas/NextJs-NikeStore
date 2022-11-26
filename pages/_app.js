@@ -5,7 +5,7 @@ const poppins = Poppins({ subsets: ['latin'], style: ['normal', 'italic'], weigh
 
 function MyApp({ Component, pageProps }) {
   return (
-    <section className={poppins}>
+    <section className={poppins.className}>
       <Component {...pageProps} />
     </section>
   )

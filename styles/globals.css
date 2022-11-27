@@ -77,7 +77,7 @@
 
     /* button */
      .button-theme {
-        @apply px-7 py-1 rounded;
+        @apply px-4 py-1 rounded;
     } 
     .button-theme:active {
         @apply scale-90 transition-all duration-100 ease-in-out shadow-md sm:text-sm;

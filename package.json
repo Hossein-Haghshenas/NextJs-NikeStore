@@ -11,9 +11,11 @@
   "dependencies": {
     "@heroicons/react": "^2.0.13",
     "@next/font": "^13.0.5",
+    "@splidejs/react-splide": "^0.7.12",
     "clsx": "^1.2.1",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
+    "lodash": "^4.17.21",
     "next": "13.0.5",
     "next-videos": "^1.5.0",
     "react": "18.2.0",

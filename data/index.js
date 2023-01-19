@@ -25,7 +25,6 @@ import product10 from "./../public/image/product10.png";
 import product11 from "./../public/image/product11.png";
 import product12 from "./../public/image/product12.png";
 
-
 import facebook from "./../public/image/facebook.svg";
 import instagram from "./../public/image/instagram.svg";
 import twitter from "./../public/image/twitter.svg";
@@ -42,13 +41,7 @@ const heroapi = {
     { imgsrc: vcover2, clip: clip },
     { imgsrc: vcover3, clip: clip },
   ],
-  sociallinks: [
-    { icon: facebook },
-    { icon: messenger },
-    { icon: instagram },
-    { icon: twitter },
-    { icon: youtube },
-  ],
+  sociallinks: [{ icon: facebook }, { icon: messenger }, { icon: instagram }, { icon: twitter }, { icon: youtube }],
 };
 
 const popularsales = {
@@ -246,7 +239,6 @@ const toprateslaes = {
   ],
 };
 
-
 const story = {
   title: "Top Stories",
   news: [
@@ -258,7 +250,7 @@ const story = {
       like: "3/5",
       time: "11 Mins",
       by: "Jared Ebanks",
-      btn: "Read More"
+      btn: "Read More",
     },
     {
       title: "Bro’s Nike Zoom Freak 4",
@@ -268,7 +260,7 @@ const story = {
       like: "5/5",
       url: "https://sneakernews.com/2022/09/14/nike-zoom-freak-4-ironstone-orange-trance-cobblestone-sail-dj6149-003/",
       by: "Michael Le",
-      btn: "Read More"
+      btn: "Read More",
     },
     {
       title: "Nike Air Max Plus",
@@ -278,7 +270,7 @@ const story = {
       url: "https://sneakernews.com/2022/09/14/nike-air-max-plus-grey-orange-black-fb3358-001/",
       like: "5/5",
       by: "Michael Le",
-      btn: "Read More"
+      btn: "Read More",
     },
     {
       title: "Air Jordan Retro High OG",
@@ -288,7 +280,7 @@ const story = {
       url: "https://sneakernews.com/2022/03/09/air-jordan-1-retro-high-og-yellow-toe-555088-711/",
       like: "5/5",
       by: "Sneaker News",
-      btn: "Read More"
+      btn: "Read More",
     },
     {
       title: "Nike Air Zoom GT Cut 2",
@@ -298,7 +290,7 @@ const story = {
       url: "https://sneakernews.com/2022/09/13/nike-zoom-gt-cut-2-officially-unveiled/",
       like: "3/5",
       by: "Jared Ebanks",
-      btn: "Read More"
+      btn: "Read More",
     },
     {
       title: "Puma Announces Breanna",
@@ -308,7 +300,7 @@ const story = {
       url: "https://sneakernews.com/2022/09/13/nike-zoom-gt-cut-2-officially-unveiled/",
       like: "3/5",
       by: "Jared Ebanks",
-      btn: "Read More"
+      btn: "Read More",
     },
     {
       title: "Nike Air Force Orange Color",
@@ -318,7 +310,7 @@ const story = {
       time: "6 Days",
       like: "4/5",
       by: "Micael Le",
-      btn: "Read More"
+      btn: "Read More",
     },
     {
       title: "Hello Kitty and Adidas",
@@ -328,7 +320,7 @@ const story = {
       time: "5 Days",
       like: "4/5",
       by: "Micael Le",
-      btn: "Read More"
+      btn: "Read More",
     },
     {
       title: "Air Force 1 Low Expands",
@@ -338,22 +330,15 @@ const story = {
       time: "5 Days",
       like: "4/5",
       by: "Micael Le",
-      btn: "Read More"
+      btn: "Read More",
     },
   ],
 };
 
-
 const footerAPI = {
   titles: [{ title: "About Nike" }, { title: "Get Help" }, { title: "Company" }],
   links: [
-    [
-      { link: "News" },
-      { link: "Careers" },
-      { link: "Investors" },
-      { link: "Prupose" },
-      { link: "Sustainability" },
-    ],
+    [{ link: "News" }, { link: "Careers" }, { link: "Investors" }, { link: "Prupose" }, { link: "Sustainability" }],
     [
       { link: "Order Status" },
       { link: "Shipping & Delivery" },
@@ -363,16 +348,8 @@ const footerAPI = {
       { link: "FAQ" },
       { link: "Blog" },
     ],
-    [
-      { link: "Gift Cards" },
-      { link: "Promotions" },
-      { link: "Find A Store" },
-      { link: "Signup" },
-      { link: "Nike Jouneral" },
-      { link: "Send Us Feeback" },
-    ],
-  ]
+    [{ link: "Gift Cards" }, { link: "Promotions" }, { link: "Find A Store" }, { link: "Signup" }, { link: "Nike Jouneral" }, { link: "Send Us Feeback" }],
+  ],
 };
-
 
 export { heroapi, footerAPI, story, sneaker, highlight, toprateslaes, popularsales };

@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import { heroapi } from './../data'
-import { Hero } from './../components';
+import Head from "next/head";
+import { heroapi, popularsales, toprateslaes } from "./../data";
+import { Hero, Sales } from "./../components";
 
 const Home = () => {
   return (
@@ -9,11 +9,13 @@ const Home = () => {
         <title>Nike Store</title>
         <meta name="description" content="Shop" />
       </Head>
-      <main>
+      <main className="flex flex-col gap-16 relative">
         <Hero heroapi={heroapi} />
+        <Sales data={popularsales} isPopularSection />
+        <Sales data={toprateslaes} />
       </main>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

@@ -1,6 +1,6 @@
 import Head from "next/head";
-import { heroapi, popularsales, toprateslaes, highlight, sneaker } from "./../data";
-import { FlexContent, Hero, Sales } from "./../components";
+import { heroapi, popularsales, toprateslaes, highlight, sneaker, story } from "./../data";
+import { FlexContent, Hero, Sales, Stories } from "./../components";
 
 const Home = () => {
   return (
@@ -15,6 +15,7 @@ const Home = () => {
         <FlexContent data={highlight} isHighLightSection />
         <Sales data={toprateslaes} />
         <FlexContent data={sneaker} />
+        <Stories data={story} />
       </main>
     </>
   );

@@ -1,17 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    domains: ["sneakernews.com"],
+    formats: ["image/avif", "image/webp"],
+  },
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.mp4/,
-      type: 'asset/resource',
+      type: "asset/resource",
       generator: {
-        filename: 'static/[hash][ext]',
+        filename: "static/[hash][ext]",
       },
-    })
+    });
 
-    return config
-},
-}
+    return config;
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

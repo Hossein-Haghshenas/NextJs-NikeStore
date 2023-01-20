@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { heroapi, popularsales, toprateslaes, highlight, sneaker, story, footerAPI } from "./../data";
-import { FlexContent, Hero, Sales, Stories, Footer, Header } from "./../components";
+import { FlexContent, Hero, Sales, Stories, Footer, Header, Cart } from "./../components";
 
 const Home = () => {
   return (
@@ -10,6 +10,7 @@ const Home = () => {
         <meta name="description" content="Shop" />
       </Head>
       <Header />
+      <Cart />
       <main className="flex flex-col gap-16 relative">
         <Hero heroapi={heroapi} />
         <Sales data={popularsales} isPopularSection />

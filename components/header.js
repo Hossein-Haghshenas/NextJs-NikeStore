@@ -3,9 +3,20 @@ import { HeartIcon, MagnifyingGlassIcon, ShoppingBagIcon } from "@heroicons/reac
 import Image from "next/image";
 import clsx from "clsx";
 import logo from "../public/image/logo.png";
+import { useDispatch } from "react-redux";
+import { setOpenCart } from "./app/cartSlice";
 
 const Navbar = () => {
   const [navState, setNavState] = useState(false);
+
+  const dispatch = useDispatch();
+  const onCartToggle = () => {
+    dispatch(
+      setOpenCart({
+        cartState: true,
+      })
+    );
+  };
 
   const onNavScroll = () => {
     if (window.scrollY > 30) {
@@ -42,7 +53,7 @@ const Navbar = () => {
             <HeartIcon className={clsx("icon-style", navState && "text-slate-900 transition-all duration-300")} />
           </li>
           <li className="grid items-center">
-            <button type="button" className="border-none outline-none active:scale-110 transition-all duration-300 relative">
+            <button type="button" onClick={onCartToggle} className="border-none outline-none active:scale-110 transition-all duration-300 relative">
               <ShoppingBagIcon className={clsx("icon-style", navState && "text-slate-900 transition-all duration-300")} />
               <span
                 className={clsx(

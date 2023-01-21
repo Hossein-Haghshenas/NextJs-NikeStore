@@ -2,9 +2,19 @@ import { ShoppingBagIcon, StarIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import React from "react";
 import clsx from "clsx";
+import { useDispatch } from "react-redux";
+import { setAddItemToCart } from "../app/cartSlice";
 
 const Card = (props) => {
-  const { isPopularSection, color, shadow, title, text, img, btn, rating, price } = props;
+  const { isPopularSection, id, color, shadow, title, text, img, btn, rating, price } = props;
+
+  const dispatch = useDispatch();
+
+  const onAddToCart = () => {
+    const item = { id, title, text, img, color, shadow, price };
+    dispatch(setAddItemToCart(item));
+  };
+
   return (
     <>
       <section
@@ -30,7 +40,7 @@ const Card = (props) => {
           </section>
 
           <section className="flex items-center gap-3 ">
-            <button type="button" className="bg-white opacity-90 blur-effect-theme button-theme p-0.5 shadow shadow-sky-200">
+            <button onClick={onAddToCart} type="button" className="bg-white opacity-90 blur-effect-theme button-theme p-0.5 shadow shadow-sky-200">
               <ShoppingBagIcon className="icon-style text-slate-900" />
             </button>
             <button type="button" className="bg-white opacity-90 blur-effect-theme button-theme px-2 py-1 shadow shadow-sky-200 text-sm text-black ">

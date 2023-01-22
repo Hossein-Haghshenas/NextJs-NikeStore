@@ -1,11 +1,13 @@
 import clsx from "clsx";
 import { useDispatch, useSelector } from "react-redux";
-import { cartState, setCloseCart } from "./app/cartSlice";
+import { cartProducts, cartState, setCloseCart } from "./app/cartSlice";
 import { CartCount, CartEmpty, CartItem } from "./cartOptions";
 
 const Cart = () => {
   const dispatch = useDispatch();
   const cartVisibility = useSelector(cartState);
+  const products = useSelector(cartProducts);
+
   const onCartToggle = () => {
     dispatch(
       setCloseCart({
@@ -23,8 +25,30 @@ const Cart = () => {
       >
         <section className={clsx("blur-effect-theme h-screen max-w-xl w-full absolute right-0")}>
           <CartCount onCartToggle={onCartToggle} />
-          <CartEmpty />
-          <CartItem />
+          {products?.length !== 0 ? (
+            <section>
+              <section className="flex items-start justify-start flex-col gap-y-7 lg:gap-y-5 overflow-y-scroll h-[81vh] scroll-smooth scroll-hidden py-3">
+                {products.map((product) => {
+                  return <CartItem key={product.id} product={product} />;
+                })}
+              </section>
+
+              <section className="fixed bottom-0 bg-white w-full px-5 py-2 grid items-center">
+                <section className="flex items-center justify-between">
+                  <h2 className="text-base font-semibold uppercase">Total</h2>
+                  <h3 className="text-sm rounded bg-theme-cart text-slate-100 px-1 py-0.5">000</h3>
+                </section>
+                <section className="grid items-center gap-2">
+                  <p className="text-sm font-medium text-center">Taxes and Shipping Will Calculate At Shipping</p>
+                  <button type="button" className="button-theme bg-theme-cart text-white">
+                    Check Out
+                  </button>
+                </section>
+              </section>
+            </section>
+          ) : (
+            <CartEmpty />
+          )}
         </section>
       </section>
     </>

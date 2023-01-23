@@ -25,8 +25,10 @@ const CartItem = ({ product: { id, title, text, img, color, shadow, price, produ
           <section
             className={clsx("bg-gradient-to-b relative rounded p-3 hover:scale-105 transition-all duration-75 ease-in-out grid items-center", color, shadow)}
           >
-            <Image src={img} alt={title} className="w-36 h-auto object-fill lg:w-28" />
-            <section className="absolute right-1 top-1 blur-theme-effect bg-white/80 text-black text-xs px-1 rounded">${price}</section>
+            <Image src={img} alt={title} priority className="w-36 h-auto object-fill lg:w-28" />
+            <section className="absolute right-1 top-1 blur-theme-effect bg-white/80 text-black text-xs px-1 rounded">
+              <span>${price}</span>
+            </section>
           </section>
           <section className="grid items-center gap-4">
             <section className="grid items-center leading-none">

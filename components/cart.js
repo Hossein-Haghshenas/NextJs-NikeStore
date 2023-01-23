@@ -12,7 +12,9 @@ const Cart = () => {
   const totalCount = useSelector(cartTotalCount);
 
   useEffect(() => {
-    dispatch(setGetTotals());
+    if (products !== undefined) {
+      dispatch(setGetTotals(products));
+    }
   }, [products, dispatch]);
 
   const onCartToggle = () => {
@@ -48,7 +50,7 @@ const Cart = () => {
               <section className="fixed bottom-0 bg-white w-full px-5 py-2 grid items-center">
                 <section className="flex items-center justify-between">
                   <h2 className="text-base font-semibold uppercase">Total</h2>
-                  <h3 className="text-sm rounded bg-theme-cart text-slate-100 px-1 py-0.5">{totalAmount}</h3>
+                  <h3 className="text-sm rounded bg-theme-cart text-slate-100 px-1 py-0.5">${totalAmount}</h3>
                 </section>
                 <section className="grid items-center gap-2">
                   <p className="text-sm font-medium text-center">Taxes and Shipping Will Calculate At Shipping</p>

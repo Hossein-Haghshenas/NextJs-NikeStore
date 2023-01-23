@@ -1,11 +1,12 @@
 import { ArrowLeftIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import emptybag from "../../public/image/emptybag.png";
 
 const CartEmpty = ({ onCartToggle }) => {
   return (
     <>
       <section className="flex items-center justify-center flex-col h-screen px-11 text-center gap-7">
-        <Image src="" alt="" className="w-40 lg:w-36 sm:w-28 h-auto object-fill transition-all duration-300 hover:scale-110" />
+        <Image src={emptybag} alt="" className="w-40 lg:w-36 sm:w-28 h-auto object-fill transition-all duration-300 hover:scale-110" />
         <button
           onClick={onCartToggle}
           type="button"

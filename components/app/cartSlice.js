@@ -76,22 +76,13 @@ const cartSlice = createSlice({
       toast.success(`Cart Cleared successfully`);
     },
 
-    setGetTotals: (state) => {
-      const { totalAmount, totalCount } = state.cartItems.reduce(
-        (cartTotal, cartProduct) => {
-          const { price, productCount } = cartProduct;
-          const totalPrice = price * productCount;
-          cartTotal.totalAmount += totalPrice;
-          cartTotal.totalCount += productCount;
-        },
-        {
-          totalAmount: 0,
-          totalCount: 0,
-        }
-      );
+    setGetTotals: (state, action) => {
+      const products = action.payload;
+      const amounts = products.length !== 0 ? products.map((product) => product.price * product.productCount).reduce((a, b) => a + b) : 0;
+      const counts = products.length !== 0 ? products.map((product) => product.productCount).reduce((a, b) => a + b) : 0;
 
-      state.cartTotalAmount = totalAmount;
-      state.cartTotalCount = totalCount;
+      state.cartTotalCount = counts;
+      state.cartTotalAmount = amounts;
     },
   },
 });

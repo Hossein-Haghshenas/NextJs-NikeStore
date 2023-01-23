@@ -3,11 +3,12 @@ import { HeartIcon, MagnifyingGlassIcon, ShoppingBagIcon } from "@heroicons/reac
 import Image from "next/image";
 import clsx from "clsx";
 import logo from "../public/image/logo.png";
-import { useDispatch } from "react-redux";
-import { setOpenCart } from "./app/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { cartTotalCount, setOpenCart } from "./app/cartSlice";
 
 const Navbar = () => {
   const [navState, setNavState] = useState(false);
+  const totalCount = useSelector(cartTotalCount);
 
   const dispatch = useDispatch();
   const onCartToggle = () => {
@@ -61,7 +62,7 @@ const Navbar = () => {
                   navState ? "bg-slate-900 text-slate-100 shadow-slate-900" : "bg-slate-100 text-slate-900 shadow-slate-100"
                 )}
               >
-                0
+                {totalCount}
               </span>
             </button>
           </li>

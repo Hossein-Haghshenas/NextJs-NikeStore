@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { useDispatch, useSelector } from "react-redux";
-import { cartProducts, cartState, setCloseCart } from "./app/cartSlice";
+import { cartProducts, cartState, setClearProductsCount, setCloseCart } from "./app/cartSlice";
 import { CartCount, CartEmpty, CartItem } from "./cartOptions";
 
 const Cart = () => {
@@ -15,6 +15,11 @@ const Cart = () => {
       })
     );
   };
+
+  const onClearProductCount = () => {
+    dispatch(setClearProductsCount());
+  };
+
   return (
     <>
       <section
@@ -24,7 +29,7 @@ const Cart = () => {
         )}
       >
         <section className={clsx("blur-effect-theme h-screen max-w-xl w-full absolute right-0")}>
-          <CartCount onCartToggle={onCartToggle} />
+          <CartCount onClearProductCount={onClearProductCount} onCartToggle={onCartToggle} />
           {products?.length !== 0 ? (
             <section>
               <section className="flex items-start justify-start flex-col gap-y-7 lg:gap-y-5 overflow-y-scroll h-[81vh] scroll-smooth scroll-hidden py-3">
@@ -47,7 +52,7 @@ const Cart = () => {
               </section>
             </section>
           ) : (
-            <CartEmpty />
+            <CartEmpty onCartToggle={onCartToggle} />
           )}
         </section>
       </section>

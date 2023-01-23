@@ -47,12 +47,39 @@ const cartSlice = createSlice({
       connectToLocalStorage(state.cartItems);
       toast.success(`${action.payload.title} Removed from Cart`);
     },
+
+    setIncreaseProductsCount: (state, action) => {
+      const itemIndex = state.cartItems.findIndex((item) => item.id === action.payload.id);
+
+      if (itemIndex >= 0) {
+        state.cartItems[itemIndex].productCount += 1;
+        toast.success(`Item Count Increased`);
+      }
+      connectToLocalStorage(state.cartItems);
+    },
+
+    setDecreaseProductsCount: (state, action) => {
+      const itemIndex = state.cartItems.findIndex((item) => item.id === action.payload.id);
+
+      if (state?.cartItems[itemIndex].productCount > 1) {
+        state.cartItems[itemIndex].productCount -= 1;
+        toast.success(`Item Count Decreased`);
+      }
+      connectToLocalStorage(state.cartItems);
+    },
+
+    setClearProductsCount: (state) => {
+      state.cartItems = [];
+      connectToLocalStorage(state.cartItems);
+      toast.success(`Cart Cleared successfully`);
+    },
   },
 });
 
 export const cartState = (state) => state.cart.cartState;
 export const cartProducts = (state) => state.cart.cartItems;
 
-export const { setOpenCart, setCloseCart, setAddItemToCart, setRemoveItemFromCart } = cartSlice.actions;
+export const { setOpenCart, setCloseCart, setAddItemToCart, setRemoveItemFromCart, setIncreaseProductsCount, setDecreaseProductsCount, setClearProductsCount } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;

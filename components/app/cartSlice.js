@@ -15,6 +15,8 @@ const connectToLocalStorage = (data) => {
 const initialState = {
   cartState: false,
   cartItems: connectToLocalStorage(),
+  cartTotalAmount: 0,
+  cartTotalCount: 0,
 };
 
 const cartSlice = createSlice({
@@ -73,13 +75,42 @@ const cartSlice = createSlice({
       connectToLocalStorage(state.cartItems);
       toast.success(`Cart Cleared successfully`);
     },
+
+    setGetTotals: (state) => {
+      const { totalAmount, totalCount } = state.cartItems.reduce(
+        (cartTotal, cartProduct) => {
+          const { price, productCount } = cartProduct;
+          const totalPrice = price * productCount;
+          cartTotal.totalAmount += totalPrice;
+          cartTotal.totalCount += productCount;
+        },
+        {
+          totalAmount: 0,
+          totalCount: 0,
+        }
+      );
+
+      state.cartTotalAmount = totalAmount;
+      state.cartTotalCount = totalCount;
+    },
   },
 });
 
 export const cartState = (state) => state.cart.cartState;
 export const cartProducts = (state) => state.cart.cartItems;
 
-export const { setOpenCart, setCloseCart, setAddItemToCart, setRemoveItemFromCart, setIncreaseProductsCount, setDecreaseProductsCount, setClearProductsCount } =
-  cartSlice.actions;
+export const cartTotalAmount = (state) => state.cart.cartTotalAmount;
+export const cartTotalCount = (state) => state.cart.cartTotalCount;
+
+export const {
+  setOpenCart,
+  setCloseCart,
+  setAddItemToCart,
+  setRemoveItemFromCart,
+  setIncreaseProductsCount,
+  setDecreaseProductsCount,
+  setClearProductsCount,
+  setGetTotals,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

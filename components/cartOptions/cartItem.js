@@ -2,13 +2,20 @@ import { MinusIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
-import { setRemoveItemFromCart } from "../app/cartSlice";
+import { setDecreaseProductsCount, setIncreaseProductsCount, setRemoveItemFromCart } from "../app/cartSlice";
 
 const CartItem = ({ product: { id, title, text, img, color, shadow, price, productCount } }) => {
   const dispatch = useDispatch();
 
   const onRemoveProduct = () => {
     dispatch(setRemoveItemFromCart({ id, title, text, img, color, shadow, price, productCount }));
+  };
+
+  const onIncreaseProductCount = () => {
+    dispatch(setIncreaseProductsCount({ id, title, text, img, color, shadow, price, productCount }));
+  };
+  const onDecreaseProductCount = () => {
+    dispatch(setDecreaseProductsCount({ id, title, text, img, color, shadow, price, productCount }));
   };
 
   return (
@@ -26,13 +33,21 @@ const CartItem = ({ product: { id, title, text, img, color, shadow, price, produ
               <p className="text-sm text-slate-800 lg:text-xs">{text}</p>
             </section>
             <section className="flex items-center justify-around w-full">
-              <button type="button" className="bg-theme-cart rounded w-6 h-6 lg:w-5 lg:h-5 flex items-center justify-center active:scale-90">
+              <button
+                onClick={onDecreaseProductCount}
+                type="button"
+                className="bg-theme-cart rounded w-6 h-6 lg:w-5 lg:h-5 flex items-center justify-center active:scale-90"
+              >
                 <MinusIcon className="w-5 h-5 lg:w-4 lg:h-4 text-white stroke-[2]" />
               </button>
               <span className="bg-theme-cart rounded text-white font-medium lg:text-xs w-7 h-6 lg:w-6 lg:h-5 flex items-center justify-center">
                 {productCount}
               </span>
-              <button type="button" className="bg-theme-cart rounded w-6 h-6 lg:w-5 lg:h-5 flex items-center justify-center active:scale-90">
+              <button
+                onClick={onIncreaseProductCount}
+                type="button"
+                className="bg-theme-cart rounded w-6 h-6 lg:w-5 lg:h-5 flex items-center justify-center active:scale-90"
+              >
                 <PlusIcon className="w-5 h-5 lg:w-4 lg:h-4 text-white stroke-[2]" />
               </button>
             </section>

@@ -1,12 +1,12 @@
 import { ChevronDoubleLeftIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import React from "react";
 
-const CartCount = ({ onCartToggle }) => {
+const CartCount = ({ onCartToggle, onClearProductCount }) => {
   return (
     <>
       <section className="bg-white h-11 flex items-center justify-between px-3 sticky top-0 left-0 right-0 w-full">
         <section className="flex items-center gap-3 ">
-          <section className="grid items-center cursor-pointer">
+          <section onClick={onCartToggle} className="grid items-center cursor-pointer">
             <ChevronDoubleLeftIcon className="w-5 h-5 text-slate-900 hover:text-orange-500 stroke-[2]" />
           </section>
           <section className="grid items-center">
@@ -16,7 +16,7 @@ const CartCount = ({ onCartToggle }) => {
           </section>
         </section>
         <section className="flex items-center">
-          <button onClick={onCartToggle} type="button" className="rounded bg-theme-cart active:scale-90 p-0.5">
+          <button onClick={onClearProductCount} type="button" className="rounded bg-theme-cart active:scale-90 p-0.5">
             <XMarkIcon className="w-5 h-5 text-white stroke-[2]" />
           </button>
         </section>

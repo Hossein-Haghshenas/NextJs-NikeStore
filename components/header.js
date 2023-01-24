@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { HeartIcon, MagnifyingGlassIcon, ShoppingBagIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import clsx from "clsx";
-import logo from "../public/image/logo.png";
+import logo from "./../public/image/logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { cartTotalCount, setOpenCart } from "./app/cartSlice";
 

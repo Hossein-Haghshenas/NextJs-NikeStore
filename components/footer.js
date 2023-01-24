@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Footer = ({ data: { titles, links } }) => {
   return (
     <footer className="bg-theme pt-7 pb-5">
@@ -23,7 +25,13 @@ const Footer = ({ data: { titles, links } }) => {
             Copyright
             <span className="text-base font-bold"> &copy; </span>
             All Right's Reserved {new Date().getFullYear()}
-            <span className="font-semibold"> Hossein Developer</span>
+            <br />
+            <span className="block pt-2">
+              Made With ❤️ By{" "}
+              <span className="font-semibold">
+                <Link href="https://github.com/Hossein-Haghshenas">Hossein Developer</Link>
+              </span>
+            </span>
           </p>
         </section>
       </section>

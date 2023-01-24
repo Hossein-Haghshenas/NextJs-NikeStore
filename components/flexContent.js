@@ -7,7 +7,10 @@ const FlexContent = ({ data, isHighLightSection }) => {
   return (
     <>
       <section
-        className={clsx("nike-container flex items-center justify-between lg:flex-col lg:justify-center", isHighLightSection ? "flex-row-reverse" : "flex-row")}
+        className={clsx(
+          "nike-container flex items-center justify-between lg:flex-col lg:justify-center mt-8",
+          isHighLightSection ? "flex-row-reverse" : "flex-row"
+        )}
       >
         <section className="max-w-lg lg:max-w-none w-full md:text-center grid items-center lg:justify-items-center">
           <h2 className="text-4xl sm:text-3xl font-bold text-gradient">{heading}</h2>

@@ -41,7 +41,7 @@ const Cart = () => {
           <CartCount onClearProductCount={onClearProductCount} onCartToggle={onCartToggle} totalCount={totalCount} />
           {products?.length !== 0 ? (
             <section>
-              <section className="flex items-start justify-start flex-col gap-y-7 lg:gap-y-5 overflow-y-scroll h-[81vh] scroll-smooth scroll-hidden py-3">
+              <section className="flex items-start justify-start flex-col gap-y-7 lg:gap-y-5 overflow-y-scroll h-[81vh] scroll-smooth scroll-hidden py-3 mt-10">
                 {products.map((product) => {
                   return <CartItem key={product.id} product={product} />;
                 })}

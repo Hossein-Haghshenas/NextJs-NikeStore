@@ -23,7 +23,7 @@ const Stories = ({ data: { title, news } }) => {
   };
   return (
     <>
-      <section className="nike-container mb-11">
+      <section className="nike-container mb-11 mt-8">
         <Title title={title} />
         <section className="mt-7">
           <Splide options={splideOptions}>

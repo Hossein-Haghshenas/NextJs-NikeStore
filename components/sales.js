@@ -7,7 +7,7 @@ const Sales = ({ data, isPopularSection }) => {
   const { title, items } = data;
   return (
     <>
-      <section className="nike-container">
+      <section className="nike-container mt-4">
         <Title title={title} />
         <section
           className={clsx(

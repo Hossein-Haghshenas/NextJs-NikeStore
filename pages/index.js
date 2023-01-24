@@ -8,6 +8,7 @@ const Home = () => {
       <Head>
         <title>Nike Store</title>
         <meta name="description" content="Shop" />
+        <link rel="icon" type="image/x-icon" href="./../public/nike.png"></link>
       </Head>
       <Header />
       <Cart />

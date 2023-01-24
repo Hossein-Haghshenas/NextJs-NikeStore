@@ -8,7 +8,7 @@ const NewsCard = (props) => {
   const { title, text, img, url, time, like, by, btn } = props;
   return (
     <>
-      <section className="relative grid items-center gap-4 pb-2 rounded-lg shadow shadow-slate-200 ring-1 ring-slate-200">
+      <section className="relative grid items-center gap-4 pb-5 rounded-lg shadow shadow-slate-200 ring-1 ring-slate-200 border-b-2">
         <section className="flex items-center justify-center">
           <Image src={img} alt={title} className="w-full h-auto object-cover shadow-md shadow-slate-200  rounded-t-lg" width={540} height={380} />
         </section>

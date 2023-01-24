@@ -4,7 +4,7 @@ import React from "react";
 const CartCount = ({ onCartToggle, onClearProductCount, totalCount }) => {
   return (
     <>
-      <section className="bg-white h-11 flex items-center justify-between px-3 sticky top-0 left-0 right-0 w-full">
+      <section className="bg-white h-11 flex items-center justify-between px-3 fixed top-0 w-full z-40">
         <section className="flex items-center gap-3 ">
           <section onClick={onCartToggle} className="grid items-center cursor-pointer">
             <ChevronDoubleLeftIcon className="w-5 h-5 text-slate-900 hover:text-orange-500 stroke-[2]" />

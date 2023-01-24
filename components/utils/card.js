@@ -65,6 +65,7 @@ const Card = (props) => {
           <Image
             src={img}
             alt=""
+            loading="lazy"
             className={clsx("transitions-theme hover:-rotate-12", isPopularSection ? "h-auto w-64 lg:w-56 md:w-48 -rotate-[35deg]" : "h-36 w-64")}
           />
         </section>
